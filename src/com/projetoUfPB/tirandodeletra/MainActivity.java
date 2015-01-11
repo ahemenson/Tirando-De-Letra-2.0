@@ -35,7 +35,7 @@ public class MainActivity extends Activity implements OnClickListener {
         setContentView(R.layout.activity_main);
        
         // texto
-        editTextPalavra = (EditText) findViewById(id.editText1);
+        editTextPalavra = (EditText) findViewById(R.id.editText1);
         editTextPalavra.setInputType(InputType.TYPE_NULL);//configura a não entrada do teclado virtual
         
       	// elemento

@@ -100,7 +100,7 @@ public final class R {
         public static final int button_E_Acento_Circuflexo=0x7f080018;
         public static final int button_Elemento=0x7f080026;
         public static final int button_EspacoBotoesLaterais=0x7f080027;
-        public static final int button_EspacoElemento=0x7f080024;
+        public static final int button_EspacoElemento=0x7f080025;
         public static final int button_G=0x7f08000f;
         public static final int button_H=0x7f080020;
         public static final int button_Instrucoes=0x7f08002d;
@@ -111,12 +111,12 @@ public final class R {
         public static final int button_O_acento_Agudo=0x7f08000d;
         public static final int button_O_acento_Circuflexo=0x7f08000c;
         public static final int button_O_acento_Til=0x7f08000b;
-        public static final int button_OK=0x7f08002b;
+        public static final int button_OK=0x7f08002c;
         public static final int button_Sair=0x7f08002f;
         public static final int button_X=0x7f08001f;
         public static final int button_Z=0x7f080016;
-        public static final int button_pontuacao=0x7f08002c;
-        public static final int editText1=0x7f080025;
+        public static final int button_pontuacao=0x7f080024;
+        public static final int editText1=0x7f08002b;
         public static final int gif_view=0x7f080030;
         public static final int menu_settings=0x7f080034;
         public static final int musica=0x7f080029;

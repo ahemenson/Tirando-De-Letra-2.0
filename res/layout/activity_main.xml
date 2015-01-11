@@ -359,8 +359,8 @@
             android:id="@+id/Button.U.Acento.Agudo"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_alignBaseline="@+id/button.X"
-            android:layout_alignBottom="@+id/button.X"
+            android:layout_alignBaseline="@+id/button.E.Acento.Circuflexo"
+            android:layout_alignBottom="@+id/button.E.Acento.Circuflexo"
             android:layout_alignLeft="@+id/button.E.Acento.Circuflexo"
             android:background="@drawable/u_acento_agudo"
             android:tag="ú"
@@ -370,53 +370,48 @@
             android:id="@+id/Button.U"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_alignBaseline="@+id/Button.U.Acento.Agudo"
-            android:layout_alignBottom="@+id/Button.U.Acento.Agudo"
-            android:layout_alignLeft="@+id/Button.U.Acento.Agudo"
+            android:layout_above="@+id/button.X"
+            android:layout_alignLeft="@+id/button.E.Acento.Circuflexo"
             android:background="@drawable/u"
             android:tag="u"
             android:visibility="visible" />
     </RelativeLayout>
 
+    <requestFocus />
+
+    <Button
+        android:id="@+id/button.pontuacao"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/estrela_unitaria"
+        android:textSize="15pt" />
+
     <RelativeLayout
         android:id="@+id/button.EspacoElemento"
         android:layout_width="200dp"
-        android:layout_height="250dp"
-        android:layout_alignParentBottom="true"
+        android:layout_height="230dp"
+        android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/Lado.Direito"
         android:gravity="bottom" >
-
-        <EditText
-            android:id="@+id/editText1"
-            android:layout_width="160dp"
-            android:layout_height="40dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:clickable="false"
-            android:ems="10"
-            android:inputType="none"
-            android:padding="10dp"
-            android:textAlignment="center"
-            android:textColor="#ffae00" />
 
         <Button
             android:id="@+id/button.Elemento"
             android:layout_width="200dp"
             android:layout_height="230dp"
-            android:layout_above="@+id/editText1"
-            android:layout_centerHorizontal="true"
+            android:layout_alignParentLeft="true"
             android:background="@drawable/gato"
             android:gravity="bottom" />
-    </RelativeLayout>
 
-    <requestFocus />
+    </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/button.EspacoBotoesLaterais"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
         android:gravity="bottom"
         android:orientation="vertical" >
 
@@ -432,42 +427,44 @@
 
         <Button
             android:id="@+id/musica"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
             android:layout_margin="1dp"
             android:layout_marginBottom="5dp"
             android:background="@drawable/som" />
-
-        <Button
-            android:id="@+id/Button.Corrige"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="1dp"
-            android:layout_marginBottom="1dp"
-            android:background="@drawable/corrige"
-            android:textSize="1pt" />
-
-        <Button
-            android:id="@+id/button.OK"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="1dp"
-            android:layout_marginRight="1dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/validar"
-            android:padding="1dp"
-            android:textSize="5pt" />
-
     </LinearLayout>
 
     <Button
-        android:id="@+id/button.pontuacao"
+        android:id="@+id/Button.Corrige"
+        android:layout_width="53dp"
+        android:layout_height="53dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/editText1"
+        android:background="@drawable/corrige"
+        android:textSize="1pt" />
+
+    <Button
+        android:id="@+id/button.OK"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/estrela_unitaria"
-        android:textSize="15dp" />
+        android:layout_alignTop="@+id/Button.Corrige"
+        android:background="@drawable/validar"
+        android:padding="1dp"
+        android:textSize="5pt" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="136dp"
+        android:layout_height="40dp"
+        android:layout_alignBaseline="@+id/button.OK"
+        android:layout_alignBottom="@+id/button.OK"
+        android:layout_toLeftOf="@+id/button.EspacoBotoesLaterais"
+        android:clickable="false"
+        android:ems="10"
+        android:inputType="none"
+        android:padding="1dp"
+        android:textAlignment="center"
+        android:textColor="#ffae00" />
 
 </RelativeLayout>
