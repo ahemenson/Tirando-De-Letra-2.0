@@ -20,7 +20,7 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity implements OnClickListener {
 
-	private Button buttonElemento, buttonOk, buttonMusica, buttonCorrige, buttonMenu, buttonPontuacao;
+	private Button buttonElemento, buttonOk, buttonMusica, buttonCorrige, buttonConfiguracao, buttonPontuacao;
 	private EditText editTextPalavra;
 	Button buttonsLetras[] = new Button[33];
 	private GerElemento gerenteElementos;
@@ -52,7 +52,7 @@ public class MainActivity extends Activity implements OnClickListener {
         audioAcerto = MediaPlayer.create(this, R.raw.audio_acerto);
         
         buttonCorrige = (Button) findViewById(R.id.Button_Corrige);
-        buttonMenu = (Button) findViewById(R.id.Button_menu);
+        buttonConfiguracao = (Button) findViewById(R.id.Button_configuracao);
         buttonPontuacao = (Button) findViewById(R.id.button_pontuacao);
        
                 
@@ -65,7 +65,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		buttonMusica.setOnClickListener(this);
 		
 		buttonCorrige.setOnClickListener(this);
-		buttonMenu.setOnClickListener(this);
+		buttonConfiguracao.setOnClickListener(this);
 				
 		// listeners letras
         buttonsLetras[0].setOnClickListener(this);
@@ -119,7 +119,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	public void onClick(View arg0) {
 		
 		// caso o usuário toque nos demais buttons presentes na tela
-		if((arg0.getId() == R.id.button_Elemento) || (arg0.getId() == R.id.button_OK) || (arg0.getId() == R.id.musica)  || (arg0.getId() == R.id.Button_Corrige) || (arg0.getId() == R.id.Button_menu)) {
+		if((arg0.getId() == R.id.button_Elemento) || (arg0.getId() == R.id.button_OK) || (arg0.getId() == R.id.musica)  || (arg0.getId() == R.id.Button_Corrige) || (arg0.getId() == R.id.Button_configuracao)) {
 			// não faça nada
 		}
 		else{
@@ -136,11 +136,9 @@ public class MainActivity extends Activity implements OnClickListener {
 			case R.id.button_OK:							
 				 verificarResposta(); // método que verifica a palavra
 				 break;				 
-			case R.id.Button_menu: // retornar para omenu de opções
-				musica.stop(); 
-				startActivity(new Intent(MainActivity.this, Menu_Activity.class));
-				finish();; 
-				 break;
+			case R.id.Button_configuracao: // retornar para omenu de opções
+				ExibeDialogConfiguraçao();
+				break;
 			case R.id.musica: //Tocar Música ou Silenciar música		
 				if(buttonMusica.getTag().equals("tocando")){ //(caso a musica estiver tocando)
 					silenciarMusica(0.0f,0.0f);		//para de tocar 
@@ -208,7 +206,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	   	}
 		else {
 			editTextPalavra.setText("");
-			ExibeDialog();
+			ExibeDialogValidar();
 		}
 
 	}
@@ -271,10 +269,11 @@ public class MainActivity extends Activity implements OnClickListener {
 		finish();
 	}
 	
-	 private void ExibeDialog(){
+	 private void ExibeDialogValidar(){
+		 // Responsável por emitir uma alertDialog personalizado 
 	        final Dialog dialog = new Dialog(this);
 	 
-	        dialog.setContentView(R.layout.customdialog);
+	        dialog.setContentView(R.layout.customdialog_validar);
 	 
 	        //define o título do Dialog
 	        dialog.setTitle("Busca de cliente:");
@@ -282,9 +281,11 @@ public class MainActivity extends Activity implements OnClickListener {
 	        //instancia os objetos que estão no layout customdialog.xml
 	        final Button confirmar = (Button) dialog.findViewById(R.id.btn_Confirmar);
 	        final Button cancelar = (Button) dialog.findViewById(R.id.btn_Cancelar);
-	        final TextView tvMens = (TextView) dialog.findViewById(R.id.tvMens);
+	        //final TextView tvMens = (TextView) dialog.findViewById(R.id.tvMens);
+	        final Button menu = (Button) dialog.findViewById(R.id.btn_menu);
+	        
 	         
-	        tvMens.setText("Nome");
+	       // tvMens.setText("Nome");
 	 
 	        confirmar.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
@@ -300,11 +301,60 @@ public class MainActivity extends Activity implements OnClickListener {
 	                dialog.dismiss();
 	            }
 	        });
+	        
+	        menu.setOnClickListener(new View.OnClickListener() {
+	            public void onClick(View v) {
+	            	musica.stop(); 
+					startActivity(new Intent(MainActivity.this, Menu_Activity.class));
+					                               
+	             //finaliza o dialog
+	             dialog.dismiss();
+	             finish();
+	            }
+	        });
 	         
 	        //exibe na tela o dialog
 	     dialog.show();
 	          
-	    }
+	}
+	 
+	 private void ExibeDialogConfiguraçao(){
+		 // Responsável por emitir uma alertDialog personalizado 
+	        final Dialog dialog = new Dialog(this);
+	 
+	        dialog.setContentView(R.layout.customdialog_configuracao);
+	 
+	        //define o título do Dialog
+	        dialog.setTitle("Configurações");
+	 
+	        //instancia os objetos que estão no layout customdialog.xml
+	        
+	        final Button menu = (Button) dialog.findViewById(R.id.btn_menu);
+	        final Button sair = (Button) dialog.findViewById(R.id.btn_sair);
+	        	         
+	         
+	        menu.setOnClickListener(new View.OnClickListener() {
+	            public void onClick(View v) {
+	            	musica.stop(); 
+					startActivity(new Intent(MainActivity.this, Menu_Activity.class));
+					                               
+	             //finaliza o dialog
+	             dialog.dismiss();
+	             finish();
+	            }
+	        });
+	        
+	        sair.setOnClickListener(new View.OnClickListener() {
+	            public void onClick(View v) {	            	            
+	             //finaliza o dialog
+	             dialog.dismiss();	             
+	            }
+	        });
+	         
+	        //exibe na tela o dialog
+	     dialog.show();
+	          
+	}
 	
 	protected void findViewLetras(){
 		

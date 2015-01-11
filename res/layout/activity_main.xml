@@ -416,13 +416,13 @@
         android:orientation="vertical" >
 
         <Button
-            android:id="@+id/Button.menu"
+            android:id="@+id/Button.configuracao"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="top"
             android:layout_margin="1dp"
             android:layout_marginTop="5dp"
-            android:background="@drawable/menu"
+            android:background="@drawable/configuracao"
             android:gravity="top|start" />
 
         <Button
