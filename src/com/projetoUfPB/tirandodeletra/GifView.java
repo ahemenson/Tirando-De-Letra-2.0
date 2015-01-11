@@ -34,7 +34,7 @@ public class GifView extends View{
 	
 	public void init(Context context){
 		setFocusable(true);
-		gifInputStream = context.getResources().openRawResource(R.drawable.logo);
+		gifInputStream = context.getResources().openRawResource(R.drawable.logo2);
 		
 		gifMovie = Movie.decodeStream(gifInputStream);
 		movieWidth = gifMovie.width();

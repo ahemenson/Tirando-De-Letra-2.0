@@ -386,7 +386,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:background="@drawable/estrela_unitaria"
-        android:textSize="15pt" />
+        android:textSize="15sp" />
 
     <RelativeLayout
         android:id="@+id/button.EspacoElemento"

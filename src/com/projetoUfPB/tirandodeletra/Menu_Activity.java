@@ -13,6 +13,7 @@ import android.widget.Button;
 public class Menu_Activity extends Activity implements OnClickListener {
 	
 	private Button buttonJogo, buttonInstrucao, buttonSair;
+	private boolean isFirst = true;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,10 +40,18 @@ public class Menu_Activity extends Activity implements OnClickListener {
 	public void onClick(View arg0) {
 		 switch (arg0.getId()) {			
 			 case R.id.button_Jogar:
-				startActivity(new Intent(Menu_Activity.this, MainActivity.class));
-				finish();
-				break;
-				
+				 
+				if(buttonJogo.getTag().toString().equals("isFirst")){
+					//isFirst = false;
+					buttonJogo.setTag("isSencond");
+					startActivity(new Intent(Menu_Activity.this, LoginActivity.class));
+					finish();
+				} 
+				else{
+					startActivity(new Intent(Menu_Activity.this, MainActivity.class));
+					finish();
+				}
+				break;				
 			 case R.id.button_Sair:			
 				 finish();
 				 System.exit(0);
