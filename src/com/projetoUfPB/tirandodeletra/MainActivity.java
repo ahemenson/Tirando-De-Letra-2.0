@@ -20,7 +20,7 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity implements OnClickListener {
 
-	private Button buttonElemento, buttonOk, buttonMusica, buttonCorrige, buttonConfiguracao, buttonPontuacao;
+	private Button buttonElemento, buttonOk, buttonCorrige, buttonConfiguracao, buttonPontuacao;
 	private EditText editTextPalavra;
 	Button buttonsLetras[] = new Button[33];
 	private GerElemento gerenteElementos;
@@ -43,11 +43,9 @@ public class MainActivity extends Activity implements OnClickListener {
       						
         // botão
         buttonOk = (Button) findViewById(R.id.button_OK);
-        
-        // botão música
-        buttonMusica = (Button) findViewById(R.id.musica);    	
-        
+                    
         //musica
+           
         musica = MediaPlayer.create(this, R.raw.music_game);
         audioAcerto = MediaPlayer.create(this, R.raw.audio_acerto);
         
@@ -61,9 +59,7 @@ public class MainActivity extends Activity implements OnClickListener {
         //------------[listenes]-------------------            
 		
 		buttonOk.setOnClickListener(this); // 
-		
-		buttonMusica.setOnClickListener(this);
-		
+						
 		buttonCorrige.setOnClickListener(this);
 		buttonConfiguracao.setOnClickListener(this);
 				
@@ -139,16 +135,8 @@ public class MainActivity extends Activity implements OnClickListener {
 			case R.id.Button_configuracao: // retornar para omenu de opções
 				ExibeDialogConfiguraçao();
 				break;
-			case R.id.musica: //Tocar Música ou Silenciar música		
-				if(buttonMusica.getTag().equals("tocando")){ //(caso a musica estiver tocando)
-					silenciarMusica(0.0f,0.0f);		//para de tocar 
-				}
-				else if(buttonMusica.getTag().equals("silenciado")){;//(caso a musica estiver pausada)
-					aumentarMusica(1.0f,1.0f);		//volta a tocar 
-				}
-				break;				 
-		}
-		
+					 
+		}		
 	}
 	
 	public void iniciaElementos(){ // método que contém os elementos(imagens) que serão utilizadas para responder
@@ -208,7 +196,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			editTextPalavra.setText("");
 			ExibeDialogValidar();
 		}
-
+		
 	}
 	
 	public void configuraLetrasInvisiveis(){
@@ -220,19 +208,6 @@ public class MainActivity extends Activity implements OnClickListener {
 	public void tocarMusica(){
 		musica.setLooping(true);
 		musica.start();
-		buttonMusica.setTag("tocando");
-	}
-		
-	public void silenciarMusica(float volumeEsquerdo, float volumeDireito){
-		buttonMusica.setTag("silenciado");
-		buttonMusica.setBackgroundResource(R.drawable.sem_som);
-		musica.setVolume(volumeEsquerdo, volumeDireito);
-	}
-	
-	public void aumentarMusica(float volumeEsquerdo, float volumeDireito){
-		buttonMusica.setTag("tocando");
-		buttonMusica.setBackgroundResource(R.drawable.som);
-		musica.setVolume(volumeEsquerdo, volumeDireito);
 	}
 	
 	protected void configuracaoInicialJogo() {
@@ -282,9 +257,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	        final Button confirmar = (Button) dialog.findViewById(R.id.btn_Confirmar);
 	        final Button cancelar = (Button) dialog.findViewById(R.id.btn_Cancelar);
 	        //final TextView tvMens = (TextView) dialog.findViewById(R.id.tvMens);
-	        final Button menu = (Button) dialog.findViewById(R.id.btn_menu);
-	        
-	         
+	        	         
 	       // tvMens.setText("Nome");
 	 
 	        confirmar.setOnClickListener(new View.OnClickListener() {
@@ -301,18 +274,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	                dialog.dismiss();
 	            }
 	        });
-	        
-	        menu.setOnClickListener(new View.OnClickListener() {
-	            public void onClick(View v) {
-	            	musica.stop(); 
-					startActivity(new Intent(MainActivity.this, Menu_Activity.class));
-					                               
-	             //finaliza o dialog
-	             dialog.dismiss();
-	             finish();
-	            }
-	        });
-	         
+	        	        	         
 	        //exibe na tela o dialog
 	     dialog.show();
 	          
@@ -330,9 +292,11 @@ public class MainActivity extends Activity implements OnClickListener {
 	        //instancia os objetos que estão no layout customdialog.xml
 	        
 	        final Button menu = (Button) dialog.findViewById(R.id.btn_menu);
+	        // botão música
+	        final Button buttonMusica = (Button) dialog.findViewById(R.id.musica);
+	        
 	        final Button sair = (Button) dialog.findViewById(R.id.btn_sair);
-	        	         
-	         
+	                
 	        menu.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
 	            	musica.stop(); 
@@ -343,6 +307,31 @@ public class MainActivity extends Activity implements OnClickListener {
 	             finish();
 	            }
 	        });
+	        
+	        buttonMusica.setOnClickListener(new View.OnClickListener() {
+	        	//Tocar Música ou Silenciar música		
+	            public void onClick(View v) {	            	            
+	            	if(buttonMusica.getTag().equals("tocando")){ //(caso a musica estiver tocando)
+						silenciarMusica(0.0f,0.0f);		//para de tocar 
+					}
+					else if(buttonMusica.getTag().equals("silenciado")){;//(caso a musica estiver pausada)
+						aumentarMusica(1.0f,1.0f);		//volta a tocar 
+					}
+	            }
+	            
+	            public void silenciarMusica(float volumeEsquerdo, float volumeDireito){
+	        		buttonMusica.setTag("silenciado");
+	        		buttonMusica.setBackgroundResource(R.drawable.sem_som);
+	        		musica.setVolume(volumeEsquerdo, volumeDireito);
+	        	}
+	        	
+	        	public void aumentarMusica(float volumeEsquerdo, float volumeDireito){
+	        		buttonMusica.setTag("tocando");
+	        		buttonMusica.setBackgroundResource(R.drawable.som);
+	        		musica.setVolume(volumeEsquerdo, volumeDireito);
+	        	}
+	            
+		    });
 	        
 	        sair.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {	            	            

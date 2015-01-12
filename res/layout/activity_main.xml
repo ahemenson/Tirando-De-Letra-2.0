@@ -425,13 +425,7 @@
             android:background="@drawable/configuracao"
             android:gravity="top|start" />
 
-        <Button
-            android:id="@+id/musica"
-            android:layout_width="46dp"
-            android:layout_height="46dp"
-            android:layout_margin="1dp"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/som" />
+       
     </LinearLayout>
 
     <Button
