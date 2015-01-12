@@ -22,8 +22,7 @@
         android:layout_alignLeft="@+id/button.Instrucoes"
         android:layout_alignParentTop="true"
         android:layout_marginTop="36dp"
-        android:background="@drawable/botao_jogar" 
-        android:tag="isFirst"/>
+        android:background="@drawable/botao_jogar" />
 
     <Button
         android:id="@+id/button.Sair"
