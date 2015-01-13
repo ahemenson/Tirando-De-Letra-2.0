@@ -343,6 +343,12 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/configuracao" />
+            
+            <Button
+            android:id="@+id/button.Espaco2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:visibility="invisible" />
 
             <Button
                 android:id="@+id/button.pontuacao"
@@ -373,15 +379,20 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/Lado.Esquerdo"
-        android:layout_marginRight="18dp" >
+        android:layout_below="@+id/Lado.Esquerdo" >
 
         <Button
             android:id="@+id/Button.Corrige"
-            android:layout_width="53dp"
-            android:layout_height="53dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:background="@drawable/corrige"
             android:textSize="1pt" />
+
+        <Button
+            android:id="@+id/button.Espaco1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:visibility="invisible" />
 
         <Button
             android:id="@+id/button.OK"
