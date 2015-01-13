@@ -22,7 +22,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	private Button buttonElemento, buttonOk, buttonCorrige, buttonConfiguracao, buttonPontuacao;
 	private EditText editTextPalavra;
-	Button buttonsLetras[] = new Button[33];
+	Button buttonsLetras[] = new Button[23];
 	private GerElemento gerenteElementos;
 	private Elemento elemento;
 	private MediaPlayer musica,audioAcerto;
@@ -88,17 +88,17 @@ public class MainActivity extends Activity implements OnClickListener {
 		buttonsLetras[21].setOnClickListener(this);
 		buttonsLetras[22].setOnClickListener(this);
 		
-		// Letras com Acentos
-		buttonsLetras[23].setOnClickListener(this);
-		buttonsLetras[24].setOnClickListener(this);
-		buttonsLetras[25].setOnClickListener(this);
-		buttonsLetras[26].setOnClickListener(this);
-		buttonsLetras[27].setOnClickListener(this);
-		buttonsLetras[28].setOnClickListener(this);
-		buttonsLetras[29].setOnClickListener(this);
-		buttonsLetras[30].setOnClickListener(this);
-		buttonsLetras[31].setOnClickListener(this);
-		buttonsLetras[32].setOnClickListener(this);
+		// Letras com Acentos  (Foram retiradas)
+//		buttonsLetras[23].setOnClickListener(this);
+//		buttonsLetras[24].setOnClickListener(this);
+//		buttonsLetras[25].setOnClickListener(this);
+//		buttonsLetras[26].setOnClickListener(this);
+//		buttonsLetras[27].setOnClickListener(this);
+//		buttonsLetras[28].setOnClickListener(this);
+//		buttonsLetras[29].setOnClickListener(this);
+//		buttonsLetras[30].setOnClickListener(this);
+//		buttonsLetras[31].setOnClickListener(this);
+//		buttonsLetras[32].setOnClickListener(this);
 				
 		configuracaoInicialJogo(); // método de configuração inicial para rodar o jogo		        
       
@@ -256,10 +256,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	        //instancia os objetos que estão no layout customdialog.xml
 	        final Button confirmar = (Button) dialog.findViewById(R.id.btn_Confirmar);
 	        final Button cancelar = (Button) dialog.findViewById(R.id.btn_Cancelar);
-	        //final TextView tvMens = (TextView) dialog.findViewById(R.id.tvMens);
-	        	         
-	       // tvMens.setText("Nome");
-	 
+	        	 
 	        confirmar.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
 	                               
@@ -372,17 +369,17 @@ public class MainActivity extends Activity implements OnClickListener {
         buttonsLetras[21] = (Button) findViewById(R.id.button_X);
         buttonsLetras[22] = (Button) findViewById(R.id.button_Z);
         
-        //Letras com Acentos
-        buttonsLetras[23] = (Button) findViewById(R.id.button_A_Acento_Agudo);
-        buttonsLetras[24] = (Button) findViewById(R.id.button_A_Acento_Circuflexo);
-        buttonsLetras[25] = (Button) findViewById(R.id.button_A_Acento_Til);
-        buttonsLetras[26] = (Button) findViewById(R.id.button_E_Acento_Agudo);
-        buttonsLetras[27] = (Button) findViewById(R.id.button_E_Acento_Circuflexo);        
-        buttonsLetras[28] = (Button) findViewById(R.id.Button_I_Acento_Agudo);
-        buttonsLetras[29] = (Button) findViewById(R.id.button_O_acento_Til);
-        buttonsLetras[30] = (Button) findViewById(R.id.button_O_acento_Circuflexo);
-        buttonsLetras[31] = (Button) findViewById(R.id.button_O_acento_Agudo);
-        buttonsLetras[32] = (Button) findViewById(R.id.Button_U_Acento_Agudo);
+        //Letras com Acentos (Foram retiradas)
+//        buttonsLetras[23] = (Button) findViewById(R.id.button_A_Acento_Agudo);
+//        buttonsLetras[24] = (Button) findViewById(R.id.button_A_Acento_Circuflexo);
+//        buttonsLetras[25] = (Button) findViewById(R.id.button_A_Acento_Til);
+//        buttonsLetras[26] = (Button) findViewById(R.id.button_E_Acento_Agudo);
+//        buttonsLetras[27] = (Button) findViewById(R.id.button_E_Acento_Circuflexo);        
+//        buttonsLetras[28] = (Button) findViewById(R.id.Button_I_Acento_Agudo);
+//        buttonsLetras[29] = (Button) findViewById(R.id.button_O_acento_Til);
+//        buttonsLetras[30] = (Button) findViewById(R.id.button_O_acento_Circuflexo);
+//        buttonsLetras[31] = (Button) findViewById(R.id.button_O_acento_Agudo);
+//        buttonsLetras[32] = (Button) findViewById(R.id.Button_U_Acento_Agudo);
       		
 	}
 	

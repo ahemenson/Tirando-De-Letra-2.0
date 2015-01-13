@@ -2,465 +2,395 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fundo"
+    android:background="@drawable/fundo_iii"
     android:gravity="top"
     tools:context=".MainActivity" >
 
-    <RelativeLayout
+    <GridLayout
         android:id="@+id/Lado.Esquerdo"
-        android:layout_width="180dp"
-        android:layout_height="200dp"
-        android:background="#ADD8E6"
-        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" >
+        android:layout_alignParentTop="true"
+        android:layout_margin="1dp"
+        android:background="@drawable/quadro"
+        android:columnCount="7"
+        android:orientation="horizontal"
+        android:padding="10dp" >
 
-        <Button
-            android:id="@+id/button.B"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignLeft="@+id/Button.E"
-            android:layout_below="@+id/Button.E"
-            android:layout_marginTop="22dp"
-            android:background="@drawable/b"
-            android:tag="b"
-            android:visibility="visible" />
+        <Space android:id="@+id/space1" />
 
-        <Button
-            android:id="@+id/Button.F"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_above="@+id/Button.R"
-            android:layout_alignLeft="@+id/button.B"
-            android:background="@drawable/f"
-            android:tag="f"
-            android:visibility="visible" />
+        <Space android:id="@+id/space3" />
 
-        <Button
-            android:id="@+id/Button.R"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignLeft="@+id/Button.F"
-            android:layout_below="@+id/Button.T"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/r"
-            android:tag="r"
-            android:visibility="visible" />
+        <Space android:id="@+id/space2" />
 
         <Button
             android:id="@+id/Button.T"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_alignLeft="@+id/Button.S"
-            android:layout_below="@+id/Button.S"
-            android:layout_marginTop="21dp"
+            android:layout_column="2"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_row="1"
             android:background="@drawable/t"
             android:tag="t"
-            android:visibility="visible" />
-
-        <Button
-            android:id="@+id/Button.D"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_above="@+id/Button.T"
-            android:layout_alignLeft="@+id/Button.F"
-            android:background="@drawable/d"
-            android:tag="d"
-            android:visibility="visible" />
-
-        <Button
-            android:id="@+id/button.C"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignBaseline="@+id/Button.R"
-            android:layout_alignBottom="@+id/Button.R"
-            android:layout_alignLeft="@+id/Button.T"
-            android:background="@drawable/c"
-            android:tag="c"
-            android:visibility="visible" />
-
-        <Button
-            android:id="@+id/Button.S"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="16dp"
-            android:layout_toRightOf="@+id/Button.D"
-            android:background="@drawable/s"
-            android:tag="s"
-            android:visibility="visible" />
-
-        <Button
-            android:id="@+id/Button.Q"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignBaseline="@+id/button.B"
-            android:layout_alignBottom="@+id/button.B"
-            android:layout_alignLeft="@+id/Button.S"
-            android:background="@drawable/q"
-            android:tag="q"
             android:visibility="visible" />
 
         <Button
             android:id="@+id/Button.E"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="14dp"
-            android:layout_marginTop="16dp"
+            android:layout_column="2"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_row="2"
             android:background="@drawable/e"
             android:tag="e"
             android:visibility="visible" />
 
         <Button
-            android:id="@+id/button.O.acento.Til"
+            android:id="@+id/Button.S"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_above="@+id/button.B"
-            android:layout_alignLeft="@+id/Button.Q"
-            android:background="@drawable/o_acento_til"
-            android:tag="õ"
+            android:layout_column="1"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_row="2"
+            android:background="@drawable/s"
+            android:tag="s"
             android:visibility="visible" />
 
         <Button
-            android:id="@+id/button.O.acento.Circuflexo"
+            android:id="@+id/Button.D"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_above="@+id/button.B"
-            android:layout_alignLeft="@+id/Button.Q"
-            android:background="@drawable/o_acento_circuflexo"
-            android:tag="ô"
+            android:layout_column="4"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_row="1"
+            android:background="@drawable/d"
+            android:tag="d"
             android:visibility="visible" />
 
         <Button
-            android:id="@+id/button.O.acento.Agudo"
+            android:id="@+id/button.B"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_above="@+id/button.B"
-            android:layout_alignLeft="@+id/Button.Q"
-            android:background="@drawable/o_acento_agudo"
-            android:tag="ó"
+            android:layout_column="2"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_row="3"
+            android:background="@drawable/b"
+            android:tag="b"
             android:visibility="visible" />
 
         <Button
-            android:id="@+id/button.A"
+            android:id="@+id/button.C"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_above="@+id/button.B"
-            android:layout_marginLeft="15dp"
-            android:layout_toRightOf="@+id/Button.Q"
-            android:background="@drawable/a"
-            android:tag="a"
-            android:visibility="visible" />
-
-        <Button
-            android:id="@+id/button.G"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignBaseline="@+id/Button.Q"
-            android:layout_alignBottom="@+id/Button.Q"
-            android:layout_alignLeft="@+id/button.A"
-            android:background="@drawable/g"
-            android:tag="g"
-            android:visibility="visible" />
-
-        <Button
-            android:id="@+id/button.O"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_above="@+id/Button.T"
-            android:layout_alignLeft="@+id/button.G"
-            android:background="@drawable/o"
-            android:tag="o"
-            android:visibility="visible" />
-
-        <Button
-            android:id="@+id/Button.J"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignBaseline="@+id/Button.T"
-            android:layout_alignBottom="@+id/Button.T"
-            android:layout_alignLeft="@+id/button.O"
-            android:background="@drawable/j"
-            android:tag="j"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_row="1"
+            android:background="@drawable/c"
+            android:tag="c"
             android:visibility="visible" />
 
         <Button
             android:id="@+id/Button.V"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_alignBaseline="@+id/button.C"
-            android:layout_alignBottom="@+id/button.C"
-            android:layout_alignLeft="@+id/Button.J"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_row="2"
             android:background="@drawable/v"
             android:tag="v"
             android:visibility="visible" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/Lado.Direito"
-        android:layout_width="110dp"
-        android:background="#ADD8E6"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/Lado.Esquerdo" >
 
         <Button
-            android:id="@+id/button.N"
+            android:id="@+id/button.O"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_alignLeft="@+id/Button.L"
-            android:layout_centerVertical="true"
-            android:background="@drawable/n"
-            android:tag="n"
+            android:layout_column="1"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_row="1"
+            android:background="@drawable/o"
+            android:tag="o"
             android:visibility="visible" />
 
         <Button
-            android:id="@+id/Button.L"
+            android:id="@+id/Button.R"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_above="@+id/button.N"
-            android:layout_marginBottom="14dp"
-            android:background="@drawable/l"
-            android:tag="l"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_row="3"
+            android:background="@drawable/r"
+            android:tag="r"
             android:visibility="visible" />
 
         <Button
             android:id="@+id/button.Z"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_alignBaseline="@+id/Button.I"
-            android:layout_alignBottom="@+id/Button.I"
-            android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@+id/Button.I"
+            android:layout_column="1"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_row="3"
             android:background="@drawable/z"
             android:tag="z"
-            android:visibility="visible" />
-
-        <Button
-            android:id="@+id/button.E.Acento.Circuflexo"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignBaseline="@+id/button.E.Acento.Agudo"
-            android:layout_alignBottom="@+id/button.E.Acento.Agudo"
-            android:layout_alignLeft="@+id/button.A.Acento.Agudo"
-            android:background="@drawable/e_acento_circuflexo"
-            android:tag="ê"
             android:visibility="visible" />
 
         <Button
             android:id="@+id/Button.I"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_above="@+id/Button.L"
-            android:layout_alignParentLeft="true"
-            android:layout_marginBottom="15dp"
+            android:layout_column="5"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_row="1"
             android:background="@drawable/i"
             android:tag="i"
             android:visibility="visible" />
 
         <Button
-            android:id="@+id/button.A.Acento.Agudo"
+            android:id="@+id/Button.J"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_alignLeft="@+id/button.Z"
-            android:layout_below="@+id/Button.L"
-            android:background="@drawable/a_acento_agudo"
-            android:tag="á"
+            android:layout_column="2"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_row="4"
+            android:background="@drawable/j"
+            android:tag="j"
             android:visibility="visible" />
 
         <Button
-            android:id="@+id/button.A.Acento.Circuflexo"
+            android:id="@+id/Button.F"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_alignLeft="@+id/button.A.Acento.Agudo"
-            android:layout_centerVertical="true"
-            android:background="@drawable/a_acento_circuflexo"
-            android:tag="â"
+            android:layout_column="1"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_row="4"
+            android:background="@drawable/f"
+            android:tag="f"
             android:visibility="visible" />
 
         <Button
-            android:id="@+id/button.A.Acento.Til"
+            android:id="@+id/button.G"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_alignLeft="@+id/button.A.Acento.Agudo"
-            android:layout_below="@+id/Button.L"
-            android:background="@drawable/a_acento_til"
-            android:tag="ã"
-            android:visibility="visible" />
-
-        <Button
-            android:id="@+id/Button.P"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignBaseline="@+id/Button.L"
-            android:layout_alignBottom="@+id/Button.L"
-            android:layout_alignLeft="@+id/button.A.Acento.Agudo"
-            android:background="@drawable/p"
-            android:tag="p"
-            android:visibility="visible" />
-
-        <Button
-            android:id="@+id/button.E.Acento.Agudo"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignLeft="@+id/button.A.Acento.Agudo"
-            android:layout_below="@+id/button.A.Acento.Agudo"
-            android:layout_marginTop="19dp"
-            android:background="@drawable/e_acento_agudo"
-            android:tag="é"
-            android:visibility="visible" />
-
-        <Button
-            android:id="@+id/button.M"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignBaseline="@+id/button.E.Acento.Circuflexo"
-            android:layout_alignBottom="@+id/button.E.Acento.Circuflexo"
-            android:layout_alignParentLeft="true"
-            android:background="@drawable/m"
-            android:tag="m"
-            android:visibility="visible" />
-
-        <Button
-            android:id="@+id/button.X"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/button.M"
-            android:layout_marginTop="14dp"
-            android:background="@drawable/x"
-            android:tag="x"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_row="4"
+            android:background="@drawable/g"
+            android:tag="g"
             android:visibility="visible" />
 
         <Button
             android:id="@+id/button.H"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_alignLeft="@+id/Button.I.Acento.Agudo"
-            android:layout_alignTop="@+id/button.X"
+            android:layout_column="4"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_row="3"
             android:background="@drawable/h"
-            android:paddingBottom="20dp"
             android:tag="h"
             android:visibility="visible" />
 
         <Button
-            android:id="@+id/Button.I.Acento.Agudo"
+            android:id="@+id/button.N"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_alignBaseline="@+id/Button.I"
-            android:layout_alignBottom="@+id/Button.I"
-            android:layout_alignParentLeft="true"
-            android:background="@drawable/i_acento_agudo"
-            android:tag="í"
-            android:visibility="visible" />
-
-        <Button
-            android:id="@+id/Button.U.Acento.Agudo"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignBaseline="@+id/button.E.Acento.Circuflexo"
-            android:layout_alignBottom="@+id/button.E.Acento.Circuflexo"
-            android:layout_alignLeft="@+id/button.E.Acento.Circuflexo"
-            android:background="@drawable/u_acento_agudo"
-            android:tag="ú"
+            android:layout_column="4"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_row="4"
+            android:background="@drawable/n"
+            android:tag="n"
             android:visibility="visible" />
 
         <Button
             android:id="@+id/Button.U"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_above="@+id/button.X"
-            android:layout_alignLeft="@+id/button.E.Acento.Circuflexo"
+            android:layout_column="4"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_row="2"
             android:background="@drawable/u"
             android:tag="u"
             android:visibility="visible" />
-    </RelativeLayout>
+
+        <Button
+            android:id="@+id/button.A"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_column="5"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_row="2"
+            android:background="@drawable/a"
+            android:tag="a"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/Button.L"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_column="5"
+            android:layout_gravity="right|bottom"
+            android:layout_margin="5dp"
+            android:layout_row="3"
+            android:background="@drawable/l"
+            android:tag="l"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/button.M"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_column="5"
+            android:layout_gravity="right|center_vertical"
+            android:layout_margin="5dp"
+            android:layout_row="4"
+            android:background="@drawable/m"
+            android:tag="m"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/Button.Q"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_column="6"
+            android:layout_gravity="left|bottom"
+            android:layout_margin="5dp"
+            android:layout_row="2"
+            android:background="@drawable/q"
+            android:tag="q"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/Button.P"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_column="6"
+            android:layout_gravity="left|bottom"
+            android:layout_margin="5dp"
+            android:layout_row="1"
+            android:background="@drawable/p"
+            android:tag="p"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/button.X"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_column="6"
+            android:layout_gravity="left|center_vertical"
+            android:layout_margin="5dp"
+            android:layout_row="3"
+            android:background="@drawable/x"
+            android:tag="x"
+            android:visibility="visible" />
+    </GridLayout>
 
     <requestFocus />
 
-    <Button
-        android:id="@+id/button.pontuacao"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/estrela_unitaria"
-        android:textSize="15sp" />
-
     <RelativeLayout
-        android:id="@+id/button.EspacoElemento"
-        android:layout_width="200dp"
-        android:layout_height="230dp"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/Lado.Direito"
-        android:gravity="bottom" >
+        android:id="@+id/Lado.Direito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/Lado.Esquerdo"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/Lado.Esquerdo"
+        android:layout_toRightOf="@+id/Lado.Esquerdo" >
 
-        <Button
-            android:id="@+id/button.Elemento"
-            android:layout_width="200dp"
-            android:layout_height="230dp"
-            android:layout_alignParentLeft="true"
-            android:background="@drawable/gato"
-            android:gravity="bottom" />
+        <RelativeLayout
+            android:id="@+id/button.EspacoElemento"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="bottom" >
+
+            <Button
+                android:id="@+id/button.Elemento"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/gato"
+                android:gravity="bottom" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/Botoes.Superiores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/Button.configuracao"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/configuracao" />
+
+            <Button
+                android:id="@+id/button.pontuacao"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/estrela_unitaria"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:clickable="false"
+            android:ems="10"
+            android:inputType="none"
+            android:padding="1dp"
+            android:textAlignment="center"
+            android:textColor="#ffae00" />
 
     </RelativeLayout>
 
     <LinearLayout
-        android:id="@+id/button.EspacoBotoesLaterais"
+        android:id="@+id/Botoes.Inferiores"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:gravity="bottom"
-        android:orientation="vertical" >
+        android:layout_below="@+id/Lado.Esquerdo"
+        android:layout_marginRight="18dp" >
 
         <Button
-            android:id="@+id/Button.configuracao"
+            android:id="@+id/Button.Corrige"
+            android:layout_width="53dp"
+            android:layout_height="53dp"
+            android:background="@drawable/corrige"
+            android:textSize="1pt" />
+
+        <Button
+            android:id="@+id/button.OK"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_gravity="top"
-            android:layout_margin="1dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/configuracao"
-            android:gravity="top|start" />
-
-       
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/validar"
+            android:padding="1dp"
+            android:textSize="5pt" />
     </LinearLayout>
-
-    <Button
-        android:id="@+id/Button.Corrige"
-        android:layout_width="53dp"
-        android:layout_height="53dp"
-        android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/editText1"
-        android:background="@drawable/corrige"
-        android:textSize="1pt" />
-
-    <Button
-        android:id="@+id/button.OK"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/Button.Corrige"
-        android:background="@drawable/validar"
-        android:padding="1dp"
-        android:textSize="5pt" />
-
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="136dp"
-        android:layout_height="40dp"
-        android:layout_alignBaseline="@+id/button.OK"
-        android:layout_alignBottom="@+id/button.OK"
-        android:layout_toLeftOf="@+id/button.EspacoBotoesLaterais"
-        android:clickable="false"
-        android:ems="10"
-        android:inputType="none"
-        android:padding="1dp"
-        android:textAlignment="center"
-        android:textColor="#ffae00" />
 
 </RelativeLayout>
