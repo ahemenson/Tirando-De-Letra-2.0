@@ -12,5 +12,6 @@
     <string name="instrucoes">INSTRUÇÔES</string>
     <string name="title_activity_splash_screen">SplashScreenActivity</string>
     <string name="title_activity_login">LoginActivity</string>
+    <string name="mensagem">Olá amiguinhos, tente novamente!</string>
 
 </resources>

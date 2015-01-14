@@ -3,14 +3,15 @@
     android:id="@+id/RelativeLayout1"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/fundo"
+    android:background="@drawable/fundo_ii"
     android:orientation="horizontal" >
 
     <LinearLayout
+        android:id="@+id/linearLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true" >
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true" >
 
         <Button
             android:id="@+id/btn_Confirmar"
@@ -18,15 +19,26 @@
             android:layout_height="50dp"
             android:layout_margin="10dp"
             android:background="@drawable/validar" />
-
-        <Button
-            android:id="@+id/btn_Cancelar"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/estrela_multipla"
-            android:text="Cancelar" />
-
     </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+         >
+
+        <TextView
+            android:id="@+id/textView.Mensagem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/mensagem"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:textSize="15pt" />
+    </RelativeLayout>
 
 </RelativeLayout>

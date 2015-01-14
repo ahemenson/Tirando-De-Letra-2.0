@@ -186,6 +186,16 @@ public class MainActivity extends Activity implements OnClickListener {
 	
 	public void verificarResposta() {		
 		
+//		String n = editTextPalavra.getText().toString();
+//		
+//		
+//		for (int j = 0; j < buttonElemento.getTag().toString().length(); j++) {
+//			if (  n.get()   .equals(elemento.getNome().charAt(j) + "")) {
+//				buttonsLetras[i].setVisibility(buttonsLetras[i].VISIBLE);
+//			}
+//		}
+		
+		
 		if (editTextPalavra.getText().toString().equals(buttonElemento.getTag())) {
 			audioAcerto.start();
 			contador++;
@@ -251,12 +261,11 @@ public class MainActivity extends Activity implements OnClickListener {
 	        dialog.setContentView(R.layout.customdialog_validar);
 	 
 	        //define o título do Dialog
-	        dialog.setTitle("Busca de cliente:");
+	        dialog.setTitle("AVISO");
 	 
 	        //instancia os objetos que estão no layout customdialog.xml
 	        final Button confirmar = (Button) dialog.findViewById(R.id.btn_Confirmar);
-	        final Button cancelar = (Button) dialog.findViewById(R.id.btn_Cancelar);
-	        	 
+	                	 
 	        confirmar.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
 	                               
@@ -264,14 +273,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	             dialog.dismiss();
 	            }
 	        });
-	 
-	        cancelar.setOnClickListener(new View.OnClickListener() {
-	            public void onClick(View v) {
-	             //finaliza o dialog
-	                dialog.dismiss();
-	            }
-	        });
-	        	        	         
+	 	        	        	         
 	        //exibe na tela o dialog
 	     dialog.show();
 	          
@@ -284,7 +286,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	        dialog.setContentView(R.layout.customdialog_configuracao);
 	 
 	        //define o título do Dialog
-	        dialog.setTitle("Configurações");
+	        dialog.setTitle("CONFIGURAÇÃO");
 	 
 	        //instancia os objetos que estão no layout customdialog.xml
 	        
