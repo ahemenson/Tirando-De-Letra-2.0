@@ -10,6 +10,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.text.InputFilter;
 import android.text.InputType;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -21,6 +22,8 @@ import android.widget.TextView;
 public class MainActivity extends Activity implements OnClickListener {
 
 	private Button buttonElemento, buttonOk, buttonCorrige, buttonConfiguracao, buttonPontuacao;
+	private TextView teste;
+	
 	private EditText editTextPalavra;
 	Button buttonsLetras[] = new Button[23];
 	private GerElemento gerenteElementos;
@@ -53,6 +56,7 @@ public class MainActivity extends Activity implements OnClickListener {
         buttonConfiguracao = (Button) findViewById(R.id.Button_configuracao);
         buttonPontuacao = (Button) findViewById(R.id.button_pontuacao);
        
+        teste = (TextView) findViewById(R.id.textView1);
                 
         findViewLetras(); // método que localiza as letras no xml
         
@@ -186,15 +190,24 @@ public class MainActivity extends Activity implements OnClickListener {
 	
 	public void verificarResposta() {		
 		
-//		String n = editTextPalavra.getText().toString();
-//		
-//		
-//		for (int j = 0; j < buttonElemento.getTag().toString().length(); j++) {
-//			if (  n.get()   .equals(elemento.getNome().charAt(j) + "")) {
-//				buttonsLetras[i].setVisibility(buttonsLetras[i].VISIBLE);
-//			}
-//		}
+		String n = editTextPalavra.getText().toString();
+		String vetorPalavras[] = new String[n.length()];
 		
+		for(int j = 0; j<vetorPalavras.length; j++){
+			vetorPalavras[j] = n.charAt(j)+ "";
+		}
+			
+			
+		for (int j = 0; j < vetorPalavras.length; j++) {
+			if (!vetorPalavras[j].equals(elemento.getNome().charAt(j) + "")) {
+				vetorPalavras[j] = "*";
+			}
+							
+		}
+		
+		Log.i("Teste", n +"/" + vetorPalavras);
+		System.out.println(vetorPalavras.toString());
+		teste.setText(vetorPalavras+"/" + n);
 		
 		if (editTextPalavra.getText().toString().equals(buttonElemento.getTag())) {
 			audioAcerto.start();
