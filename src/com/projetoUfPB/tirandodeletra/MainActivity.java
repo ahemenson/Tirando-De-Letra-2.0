@@ -26,7 +26,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	Button buttonsLetras[] = new Button[23];
 	private GerElemento gerenteElementos;
 	private Elemento elemento;
-	private MediaPlayer musica,audioAcerto;
+	private MediaPlayer musica,audioAcerto, audioErro;
 	private int contador = 0;
 	
 
@@ -49,6 +49,7 @@ public class MainActivity extends Activity implements OnClickListener {
            
         musica = MediaPlayer.create(this, R.raw.music_game);
         audioAcerto = MediaPlayer.create(this, R.raw.audio_acerto);
+        audioErro = MediaPlayer.create(this, R.raw.erro);
         
         buttonCorrige = (Button) findViewById(R.id.Button_Corrige);
         buttonConfiguracao = (Button) findViewById(R.id.Button_configuracao);
@@ -192,10 +193,11 @@ public class MainActivity extends Activity implements OnClickListener {
 			buttonPontuacao.setText(contador+"");
 			preparaProximaJogada();						
 	   	}		
-		else {						
+		else {	
+			audioErro.start();
 			String dicaPalavraCerta = "";    	
 	    	String n = editTextPalavra.getText().toString();// palavra formada
-			String n2 = buttonElemento.getTag() + ""; // palavra correta do elemento
+			String n2 = buttonElemento.getTag() + ""; // palavra correta do elementoj
 			
 			for(int j = 0; j<n.length(); j++){
 				if((n2.charAt(j)+"").equals(n.charAt(j)+"")){

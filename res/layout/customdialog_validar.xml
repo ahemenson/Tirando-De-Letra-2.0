@@ -23,37 +23,38 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:orientation="vertical" >
-        
-         <TextView
-        android:id="@+id/textView.Mensagem1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/mensagem1"
-        android:textColor="#FFFF00"
-        android:gravity="center"
-        android:textColorHint="#000000"
-        android:textSize="15pt" />
-        
+
         <TextView
-        android:id="@+id/textView.Mensagem2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/mensagem2"
-        android:textColor="#FFFFFF"
-        android:gravity="center"
-        android:textColorHint="#FFFF00"
-        android:textSize="15pt" />
-        
-         <TextView
-        android:id="@+id/textView.Mensagem3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/mensagem3"
-        android:textColor="#FFFF00"
-        android:gravity="center"
-        android:textColorHint="#000000"
-        android:textSize="15pt" />
-        
+            android:id="@+id/textView.Mensagem1"
+            android:layout_width="180dp"
+            android:layout_height="50dp"
+            android:background="@drawable/apenas_acertou"
+            android:textColor="#FFFF00"
+            android:textColorHint="#000000"
+            android:textSize="15pt" 
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/textView.Mensagem2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/mensagem2"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFF00"
+            android:textSize="15pt" />
+
+        <TextView
+            android:id="@+id/textView.Mensagem3"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:background="@drawable/tente_novamente"
+            android:layout_gravity="center"
+            android:textColor="#FFFF00"
+            android:textColorHint="#000000"
+            android:textSize="15pt" 
+           />
+
     </LinearLayout>
 
 </RelativeLayout>

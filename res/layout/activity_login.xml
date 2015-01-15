@@ -40,7 +40,7 @@
         android:layout_margin="30dp"
         android:layout_marginBottom="18dp"
         android:gravity="center"
-        android:text="@string/mensagemNome"
+        android:background="@drawable/digite_seu_nome"
         android:textColor="#FFFF00"
         android:textSize="20pt" />
 

@@ -369,7 +369,8 @@
             android:inputType="none"
             android:padding="1dp"
             android:textAlignment="center"
-            android:textColor="#ffae00" />
+            android:textColor="#ffae00"
+            android:gravity="center" />
 
     </RelativeLayout>
 
