@@ -404,14 +404,4 @@
             android:textSize="5pt" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/Lado.Esquerdo"
-        android:layout_alignTop="@+id/Botoes.Inferiores"
-        android:layout_marginLeft="157dp"
-        android:layout_marginTop="14dp"
-        android:text="TextView" />
-
 </RelativeLayout>

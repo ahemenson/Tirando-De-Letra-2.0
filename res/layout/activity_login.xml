@@ -5,22 +5,43 @@
     android:background="@drawable/fundo_ii"
     tools:context=".LoginActivity" >
 
-    <Button
-        android:id="@+id/ok"
+    <LinearLayout
+        android:id="@+id/linearLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
-        android:text="ok" />
+        android:layout_centerVertical="true"
+        android:orientation="horizontal" >
 
-    <EditText
-        android:id="@+id/editText.nome"
-        android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/editText.nome"
+            android:inputType="text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10" >
+
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/ok"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/validar"
+            android:padding="15dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView.Nome"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ok"
+        android:layout_above="@+id/linearLayout1"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="63dp"
-        android:ems="10" />
+        android:layout_margin="30dp"
+        android:layout_marginBottom="18dp"
+        android:gravity="center"
+        android:text="@string/mensagemNome"
+        android:textColor="#FFFF00"
+        android:textSize="20pt" />
 
 </RelativeLayout>

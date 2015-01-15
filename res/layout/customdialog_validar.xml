@@ -6,42 +6,54 @@
     android:background="@drawable/fundo_ii"
     android:orientation="horizontal" >
 
-    <LinearLayout
-        android:id="@+id/linearLayout1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/btn_Confirmar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true" >
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
+        android:background="@drawable/validar" />
 
-        <Button
-            android:id="@+id/btn_Confirmar"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/validar" />
-    </LinearLayout>
-
-    <RelativeLayout
-        android:id="@+id/relativeLayout2"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_Confirmar"
         android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
-         >
-
-    </RelativeLayout>
-
-    <TextView
-        android:id="@+id/textView.Mensagem"
-        android:layout_width="350dp"
-        android:layout_height="250dp"
         android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="33dp"
-        android:paddingRight="50dp"
-        android:text="@string/mensagem"
-        android:textColor="#000000"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" >
+        
+         <TextView
+        android:id="@+id/textView.Mensagem1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/mensagem1"
+        android:textColor="#FFFF00"
+        android:gravity="center"
         android:textColorHint="#000000"
         android:textSize="15pt" />
+        
+        <TextView
+        android:id="@+id/textView.Mensagem2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/mensagem2"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:textColorHint="#FFFF00"
+        android:textSize="15pt" />
+        
+         <TextView
+        android:id="@+id/textView.Mensagem3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/mensagem3"
+        android:textColor="#FFFF00"
+        android:gravity="center"
+        android:textColorHint="#000000"
+        android:textSize="15pt" />
+        
+    </LinearLayout>
 
 </RelativeLayout>

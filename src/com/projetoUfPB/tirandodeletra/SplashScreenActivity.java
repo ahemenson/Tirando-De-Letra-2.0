@@ -20,7 +20,7 @@ public class SplashScreenActivity extends Activity {
 
 			public void run() {
 				try{
-					sleep(5000);
+					sleep(8000);
 				}
 				catch(InterruptedException e){
 					e.getStackTrace();

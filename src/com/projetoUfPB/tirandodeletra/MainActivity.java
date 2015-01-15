@@ -22,8 +22,6 @@ import android.widget.TextView;
 public class MainActivity extends Activity implements OnClickListener {
 
 	private Button buttonElemento, buttonOk, buttonCorrige, buttonConfiguracao, buttonPontuacao;
-	private TextView teste;
-	
 	private EditText editTextPalavra;
 	Button buttonsLetras[] = new Button[23];
 	private GerElemento gerenteElementos;
@@ -55,9 +53,7 @@ public class MainActivity extends Activity implements OnClickListener {
         buttonCorrige = (Button) findViewById(R.id.Button_Corrige);
         buttonConfiguracao = (Button) findViewById(R.id.Button_configuracao);
         buttonPontuacao = (Button) findViewById(R.id.button_pontuacao);
-       
-        teste = (TextView) findViewById(R.id.textView1);
-                
+                              
         findViewLetras(); // método que localiza as letras no xml
         
         //------------[listenes]-------------------            
@@ -190,38 +186,33 @@ public class MainActivity extends Activity implements OnClickListener {
 	
 	public void verificarResposta() {		
 		
-		String n = editTextPalavra.getText().toString();
-		String vetorPalavras[] = new String[n.length()];
-		
-		for(int j = 0; j<vetorPalavras.length; j++){
-			vetorPalavras[j] = n.charAt(j)+ "";
-		}
-			
-			
-		for (int j = 0; j < vetorPalavras.length; j++) {
-			if (!vetorPalavras[j].equals(elemento.getNome().charAt(j) + "")) {
-				vetorPalavras[j] = "*";
-			}
-							
-		}
-		
-		Log.i("Teste", n +"/" + vetorPalavras);
-		System.out.println(vetorPalavras.toString());
-		teste.setText(vetorPalavras+"/" + n);
-		
 		if (editTextPalavra.getText().toString().equals(buttonElemento.getTag())) {
 			audioAcerto.start();
 			contador++;
 			buttonPontuacao.setText(contador+"");
 			preparaProximaJogada();						
-	   	}
-		else {
+	   	}		
+		else {						
+			String dicaPalavraCerta = "";    	
+	    	String n = editTextPalavra.getText().toString();// palavra formada
+			String n2 = buttonElemento.getTag() + ""; // palavra correta do elemento
+			
+			for(int j = 0; j<n.length(); j++){
+				if((n2.charAt(j)+"").equals(n.charAt(j)+"")){
+					dicaPalavraCerta = dicaPalavraCerta + n.charAt(j)+"";
+				}
+				else{
+					dicaPalavraCerta = dicaPalavraCerta + "*";
+				}
+			}
+						
 			editTextPalavra.setText("");
-			ExibeDialogValidar();
+			
+			ExibeDialogValidar(dicaPalavraCerta);
 		}
 		
 	}
-	
+	    	
 	public void configuraLetrasInvisiveis(){
 		for (int i = 0; i < buttonsLetras.length; i++) {
 			buttonsLetras[i].setVisibility(buttonsLetras[i].INVISIBLE);
@@ -267,7 +258,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		finish();
 	}
 	
-	 private void ExibeDialogValidar(){
+	 private void ExibeDialogValidar(String dicaPalavraCerta){
 		 // Responsável por emitir uma alertDialog personalizado 
 	        final Dialog dialog = new Dialog(this);
 	 
@@ -278,6 +269,9 @@ public class MainActivity extends Activity implements OnClickListener {
 	 
 	        //instancia os objetos que estão no layout customdialog.xml
 	        final Button confirmar = (Button) dialog.findViewById(R.id.btn_Confirmar);
+	        
+	        final TextView dicaPalavra = (TextView) dialog.findViewById(R.id.textView_Mensagem2);
+	        dicaPalavra.setText(dicaPalavraCerta);
 	                	 
 	        confirmar.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
