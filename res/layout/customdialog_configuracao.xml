@@ -4,36 +4,49 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/fundo_ii"
+    android:gravity="center"
     android:orientation="horizontal" >
 
     <LinearLayout
+        android:id="@+id/externo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true" >
+        android:background="@drawable/tabela_ii"
+        android:orientation="vertical"
+        android:padding="15dp" >
 
-        <Button
-            android:id="@+id/btn.menu"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/menu" />
-        
-         <Button
-            android:id="@+id/musica"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:tag="tocando"
-            android:background="@drawable/som" />
+        <LinearLayout
+            android:id="@+id/interno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/btn.sair"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/sair" />
+            <Button
+                android:id="@+id/btn.menu"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/menu" />
+
+            <Button
+                android:id="@+id/musica"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/som"
+                android:tag="tocando" />
+
+            <Button
+                android:id="@+id/btn.sair"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/voltar" />
+        </LinearLayout>
     </LinearLayout>
-    
 
 </RelativeLayout>

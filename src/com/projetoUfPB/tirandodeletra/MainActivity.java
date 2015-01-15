@@ -51,6 +51,7 @@ public class MainActivity extends Activity implements OnClickListener {
         audioAcerto = MediaPlayer.create(this, R.raw.audio_acerto);
         audioErro = MediaPlayer.create(this, R.raw.erro);
         
+        
         buttonCorrige = (Button) findViewById(R.id.Button_Corrige);
         buttonConfiguracao = (Button) findViewById(R.id.Button_configuracao);
         buttonPontuacao = (Button) findViewById(R.id.button_pontuacao);
@@ -143,11 +144,20 @@ public class MainActivity extends Activity implements OnClickListener {
 	public void iniciaElementos(){ // método que contém os elementos(imagens) que serão utilizadas para responder
 			
 			gerenteElementos = new GerElemento();
+			
+			// primeira fase
 			gerenteElementos.adicionaElemento("gato",  R.drawable.gato);			
-			gerenteElementos.adicionaElemento("coelho",  R.drawable.coelho);
-			gerenteElementos.adicionaElemento("galinha",  R.drawable.galinha);
-			gerenteElementos.adicionaElemento("coruja",  R.drawable.coruja);
+			gerenteElementos.adicionaElemento("bala",  R.drawable.bala);
+//			gerenteElementos.adicionaElemento("casa",  R.drawable.casa);
+//			gerenteElementos.adicionaElemento("copo",  R.drawable.copo);
+//			gerenteElementos.adicionaElemento("dado",  R.drawable.dado);
+//			gerenteElementos.adicionaElemento("fogo",  R.drawable.fogo);
+//			gerenteElementos.adicionaElemento("gelo",  R.drawable.gelo);
+//			gerenteElementos.adicionaElemento("pato",  R.drawable.pato);
+//			gerenteElementos.adicionaElemento("rato",  R.drawable.rato);
+//			gerenteElementos.adicionaElemento("urso",  R.drawable.urso);
 				
+			// segunda fase
 	}
 	
 	public void capturaElementoAtual(){				
