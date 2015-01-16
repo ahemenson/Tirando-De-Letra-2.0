@@ -11,7 +11,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/tabela"
-        android:orientation="horizontal" >
+        android:orientation="vertical" >
 
         <Button
             android:id="@+id/button.sair"
@@ -19,6 +19,29 @@
             android:layout_height="50dp"
             android:layout_gravity="top"
             android:background="@drawable/sair" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2.81"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:src="@drawable/parabens" />
+
+            <TextView
+                android:id="@+id/text.nomeDoJogador"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="#00008B"
+                android:textSize="10pt" />
+        </LinearLayout>
 
     </LinearLayout>
 

@@ -7,53 +7,65 @@
     android:gravity="center"
     android:orientation="horizontal" >
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/externo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:background="@drawable/tabela_ii"
-        android:orientation="vertical"
-        android:padding="15dp" >
+        android:orientation="vertical" >
 
         <Button
             android:id="@+id/btn_Confirmar"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
             android:layout_gravity="top"
             android:background="@drawable/voltar" />
 
-        <TextView
-            android:id="@+id/textView.Mensagem1"
-            android:layout_width="170dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:background="@drawable/apenas_acertou"
-            android:textColor="#FFFF00"
-            android:textColorHint="#000000"
-            android:textSize="15pt" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/btn_Confirmar"
+            android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/textView.Mensagem2"
-           android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="@string/mensagem2"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#FFFF00"
-            android:textSize="20pt" />
+            <TextView
+                android:id="@+id/textView.Mensagem1"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/apenas_acertou"
+                android:textColor="#FFFF00"
+                android:textColorHint="#000000"
+                android:textSize="15pt" />
 
-        <TextView
-            android:id="@+id/textView.Mensagem3"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:background="@drawable/tente_novamente"
-            android:textColor="#FFFF00"
-            android:textColorHint="#000000"
-            android:textSize="15pt" />
+            <TextView
+                android:id="@+id/textView.Mensagem2"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/mensagem2"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFF00"
+                android:textSize="20pt" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/textView.Mensagem3"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/tente_novamente"
+                android:textColor="#FFFF00"
+                android:textColorHint="#000000"
+                android:textSize="15pt" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
 
 </RelativeLayout>

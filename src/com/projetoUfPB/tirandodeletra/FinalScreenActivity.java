@@ -2,17 +2,17 @@ package com.projetoUfPB.tirandodeletra;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class FinalScreenActivity extends Activity  implements OnClickListener {
 	
 	private Button buttonSair; 
+	private TextView textNome;
 	
 	
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -20,7 +20,11 @@ public class FinalScreenActivity extends Activity  implements OnClickListener {
 		
 		
 		buttonSair = (Button) findViewById(R.id.button_sair);
+		textNome = (TextView) findViewById(R.id.text_nomeDoJogador);
 		
+		textNome.setText(LoginActivity.nome);
+		
+				
 		buttonSair.setOnClickListener(this);
 		
 	}

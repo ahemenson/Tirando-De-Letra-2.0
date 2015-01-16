@@ -13,7 +13,7 @@ import android.widget.EditText;
 
 public class LoginActivity extends Activity implements OnClickListener{
 	
-	private String nome;
+	static String nome;
 	private Button ok;
 	private EditText editextNome;
 	
