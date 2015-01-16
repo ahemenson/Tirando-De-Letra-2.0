@@ -2,7 +2,6 @@ package com.projetoUfPB.tirandodeletra;
 
 import com.example.classesGerenciadoras.Elemento;
 import com.example.classesGerenciadoras.GerElemento;
-import com.projetoUfPB.tirandodeletra.R.id;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Activity;
@@ -10,13 +9,10 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.text.InputFilter;
 import android.text.InputType;
-import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends Activity implements OnClickListener {
@@ -66,28 +62,17 @@ public class MainActivity extends Activity implements OnClickListener {
 		buttonConfiguracao.setOnClickListener(this);
 				
 		// listeners letras
-        buttonsLetras[0].setOnClickListener(this);
-		buttonsLetras[1].setOnClickListener(this);
-		buttonsLetras[2].setOnClickListener(this);
-		buttonsLetras[3].setOnClickListener(this);
-		buttonsLetras[4].setOnClickListener(this);
-		buttonsLetras[5].setOnClickListener(this);
-		buttonsLetras[6].setOnClickListener(this);
-		buttonsLetras[7].setOnClickListener(this);
-		buttonsLetras[8].setOnClickListener(this);
-		buttonsLetras[9].setOnClickListener(this);
-		buttonsLetras[10].setOnClickListener(this);
-		buttonsLetras[11].setOnClickListener(this);
-		buttonsLetras[12].setOnClickListener(this);
-		buttonsLetras[13].setOnClickListener(this);
-		buttonsLetras[14].setOnClickListener(this);
-		buttonsLetras[15].setOnClickListener(this);
-		buttonsLetras[16].setOnClickListener(this);
-		buttonsLetras[17].setOnClickListener(this);
-		buttonsLetras[18].setOnClickListener(this);
-		buttonsLetras[19].setOnClickListener(this);
-		buttonsLetras[20].setOnClickListener(this);
-		buttonsLetras[21].setOnClickListener(this);
+        buttonsLetras[0].setOnClickListener(this); 		buttonsLetras[1].setOnClickListener(this);
+		buttonsLetras[2].setOnClickListener(this);		buttonsLetras[3].setOnClickListener(this);
+		buttonsLetras[4].setOnClickListener(this);		buttonsLetras[5].setOnClickListener(this);
+		buttonsLetras[6].setOnClickListener(this);		buttonsLetras[7].setOnClickListener(this);
+		buttonsLetras[8].setOnClickListener(this);		buttonsLetras[9].setOnClickListener(this);
+		buttonsLetras[10].setOnClickListener(this);		buttonsLetras[11].setOnClickListener(this);
+		buttonsLetras[12].setOnClickListener(this);		buttonsLetras[13].setOnClickListener(this);
+		buttonsLetras[14].setOnClickListener(this);		buttonsLetras[15].setOnClickListener(this);
+		buttonsLetras[16].setOnClickListener(this);		buttonsLetras[17].setOnClickListener(this);
+		buttonsLetras[18].setOnClickListener(this);		buttonsLetras[19].setOnClickListener(this);
+		buttonsLetras[20].setOnClickListener(this);		buttonsLetras[21].setOnClickListener(this);
 		buttonsLetras[22].setOnClickListener(this);
 		
 		// Letras com Acentos  (Foram retiradas)
@@ -146,7 +131,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			gerenteElementos = new GerElemento();
 			
 			// primeira fase
-			gerenteElementos.adicionaElemento("gato",  R.drawable.gato);			
+			gerenteElementos.adicionaElemento("gato",  R.drawable.gato); 
 			gerenteElementos.adicionaElemento("bala",  R.drawable.bala);
 //			gerenteElementos.adicionaElemento("casa",  R.drawable.casa);
 //			gerenteElementos.adicionaElemento("copo",  R.drawable.copo);
@@ -218,11 +203,37 @@ public class MainActivity extends Activity implements OnClickListener {
 				}
 			}
 						
-			editTextPalavra.setText("");
-			
+			editTextPalavra.setText("");			
 			ExibeDialogValidar(dicaPalavraCerta);
 		}
+		proximaFase();
 		
+	}
+	
+	//emite uma janela de dialogo, avisando o termino da fase
+	public void proximaFase(){
+		if(contador==1){
+			 final Dialog dialog = new Dialog(this);
+			 
+		        dialog.setContentView(R.layout.fase);
+		 
+		        //define o título do Dialog
+		        dialog.setTitle("Terminou");
+		 
+		        //instancia os objetos que estão no layout customdialog.xml
+		        final Button confirmar = (Button) dialog.findViewById(R.id.btn_Confirmar);
+		        		                	 
+		        confirmar.setOnClickListener(new View.OnClickListener() {
+		            public void onClick(View v) {
+		                               
+		             //finaliza o dialog
+		             dialog.dismiss();
+		            }
+		        });
+		 	        	        	         
+		        //exibe na tela o dialog
+		     dialog.show();
+		}
 	}
 	    	
 	public void configuraLetrasInvisiveis(){
@@ -366,28 +377,17 @@ public class MainActivity extends Activity implements OnClickListener {
 	protected void findViewLetras(){
 		
 		 // letras        	               
-        buttonsLetras[0] = (Button) findViewById(R.id.button_A);
-        buttonsLetras[1] = (Button) findViewById(R.id.button_B);
-        buttonsLetras[2] = (Button) findViewById(R.id.button_C);
-        buttonsLetras[3] = (Button) findViewById(R.id.Button_D);
-        buttonsLetras[4] = (Button) findViewById(R.id.Button_E);
-        buttonsLetras[5] = (Button) findViewById(R.id.Button_F);
-        buttonsLetras[6] = (Button) findViewById(R.id.button_G);
-        buttonsLetras[7] = (Button) findViewById(R.id.button_H);
-        buttonsLetras[8] = (Button) findViewById(R.id.Button_I);
-        buttonsLetras[9] = (Button) findViewById(R.id.Button_J);
-        buttonsLetras[10] = (Button) findViewById(R.id.Button_L);
-        buttonsLetras[11] = (Button) findViewById(R.id.button_M);
-        buttonsLetras[12] = (Button) findViewById(R.id.button_N);
-        buttonsLetras[13] = (Button) findViewById(R.id.button_O);
-        buttonsLetras[14] = (Button) findViewById(R.id.Button_P);
-        buttonsLetras[15] = (Button) findViewById(R.id.Button_Q);
-        buttonsLetras[16] = (Button) findViewById(R.id.Button_R);
-        buttonsLetras[17] = (Button) findViewById(R.id.Button_S);
-        buttonsLetras[18] = (Button) findViewById(R.id.Button_T);
-        buttonsLetras[19] = (Button) findViewById(R.id.Button_U);
-        buttonsLetras[20] = (Button) findViewById(R.id.Button_V);
-        buttonsLetras[21] = (Button) findViewById(R.id.button_X);
+        buttonsLetras[0] = (Button) findViewById(R.id.button_A);   buttonsLetras[1] = (Button) findViewById(R.id.button_B);
+        buttonsLetras[2] = (Button) findViewById(R.id.button_C);   buttonsLetras[3] = (Button) findViewById(R.id.Button_D);
+        buttonsLetras[4] = (Button) findViewById(R.id.Button_E);   buttonsLetras[5] = (Button) findViewById(R.id.Button_F);
+        buttonsLetras[6] = (Button) findViewById(R.id.button_G);   buttonsLetras[7] = (Button) findViewById(R.id.button_H);
+        buttonsLetras[8] = (Button) findViewById(R.id.Button_I);   buttonsLetras[9] = (Button) findViewById(R.id.Button_J);
+        buttonsLetras[10] = (Button) findViewById(R.id.Button_L);  buttonsLetras[11] = (Button) findViewById(R.id.button_M);
+        buttonsLetras[12] = (Button) findViewById(R.id.button_N);  buttonsLetras[13] = (Button) findViewById(R.id.button_O);
+        buttonsLetras[14] = (Button) findViewById(R.id.Button_P);  buttonsLetras[15] = (Button) findViewById(R.id.Button_Q);
+        buttonsLetras[16] = (Button) findViewById(R.id.Button_R);  buttonsLetras[17] = (Button) findViewById(R.id.Button_S);
+        buttonsLetras[18] = (Button) findViewById(R.id.Button_T);  buttonsLetras[19] = (Button) findViewById(R.id.Button_U);
+        buttonsLetras[20] = (Button) findViewById(R.id.Button_V);  buttonsLetras[21] = (Button) findViewById(R.id.button_X);
         buttonsLetras[22] = (Button) findViewById(R.id.button_Z);
         
         //Letras com Acentos (Foram retiradas)
