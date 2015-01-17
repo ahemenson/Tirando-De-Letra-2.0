@@ -23,7 +23,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_gravity="top"
-            android:background="@drawable/voltar" />
+            android:background="@drawable/sair" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -35,8 +35,8 @@
 
             <TextView
                 android:id="@+id/textView.Mensagem1"
-                android:layout_width="170dp"
-                android:layout_height="50dp"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:background="@drawable/apenas_acertou"
                 android:textColor="#FFFF00"
@@ -56,8 +56,8 @@
 
             <TextView
                 android:id="@+id/textView.Mensagem3"
-                android:layout_width="200dp"
-                android:layout_height="50dp"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:background="@drawable/tente_novamente"
                 android:textColor="#FFFF00"

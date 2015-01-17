@@ -36,7 +36,9 @@ public class Menu_Activity extends Activity implements OnClickListener {
 
 	@Override
 	public void onClick(View arg0) {
+		
 		 switch (arg0.getId()) {			
+		 
 			 case R.id.button_Jogar:
 								
 				if(Menu_Activity.isFirst){
@@ -48,7 +50,12 @@ public class Menu_Activity extends Activity implements OnClickListener {
 					startActivity(new Intent(Menu_Activity.this, MainActivity.class));
 					finish();
 				}
-				break;				
+				break;
+				
+			 case R.id.button_Instrucoes:			
+				 startActivity(new Intent(Menu_Activity.this, DicaActivity.class));
+				 finish();	
+				 break;
 			 case R.id.button_Sair:			
 				 finish();
 				 System.exit(0);

@@ -14,22 +14,22 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:background="@drawable/tabela_ii"
-        android:orientation="vertical" >
+        android:orientation="horizontal" >
 
         <Button
             android:id="@+id/btn.sair"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@drawable/voltar" />
+            android:background="@drawable/sair" />
 
         <LinearLayout
             android:id="@+id/interno"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_weight="1.68"
+            android:layout_weight="1.87"
             android:gravity="center|center_horizontal|center_vertical"
-            android:orientation="vertical" >
+            android:orientation="horizontal" >
 
             <Button
                 android:id="@+id/btn.menu"
