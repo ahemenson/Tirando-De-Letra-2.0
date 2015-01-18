@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fundo_iii"
-    android:gravity="top"
+    android:gravity="center"
     tools:context=".MainActivity" >
 
     <GridLayout
@@ -307,18 +307,46 @@
         android:id="@+id/Lado.Direito"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/Lado.Esquerdo"
+        android:layout_above="@+id/Botoes.Inferiores"
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/Lado.Esquerdo"
         android:layout_toRightOf="@+id/Lado.Esquerdo" >
+
+        <LinearLayout
+            android:id="@+id/Botoes.Superiores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/button.audioElemento"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="1dp"                
+                android:background="@drawable/audio" />
+
+            <Button
+                android:id="@+id/button.Espaco2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:visibility="invisible" />
+
+            <Button
+                android:id="@+id/button.pontuacao"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/estrela_unitaria"
+                android:textSize="15sp" />
+        </LinearLayout>
 
         <RelativeLayout
             android:id="@+id/button.EspacoElemento"
             android:layout_width="120dp"
             android:layout_height="120dp"
+            android:layout_below="@+id/Botoes.Superiores"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:background="@drawable/paperclips_"
             android:gravity="bottom" >
 
             <Button
@@ -331,49 +359,6 @@
                 android:gravity="bottom" />
         </RelativeLayout>
 
-        <LinearLayout
-            android:id="@+id/Botoes.Superiores"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:orientation="horizontal" >
-
-            <Button
-                android:id="@+id/Button.configuracao"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/configuracao" />
-            
-            <Button
-            android:id="@+id/button.audioElemento"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/audio"
-            />
-
-            <Button
-                android:id="@+id/button.pontuacao"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/estrela_unitaria"
-                android:textSize="15sp" />
-        </LinearLayout>
-
-        <EditText
-            android:id="@+id/editText1"
-            android:layout_width="130dp"
-            android:layout_height="40dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:clickable="false"
-            android:ems="10"
-            android:inputType="none"
-            android:padding="1dp"
-            android:textAlignment="center"
-            android:textColor="#ffae00"
-            android:gravity="center" />
-
     </RelativeLayout>
 
     <LinearLayout
@@ -382,29 +367,66 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/Lado.Esquerdo" >
+        android:orientation="horizontal" >
 
-        <Button
-            android:id="@+id/Button.Corrige"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/corrige"
-            android:textSize="1pt" />
+        <LinearLayout
+            android:id="@+id/Espace.Botoes.Validar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/button.Espaco1"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:visibility="invisible" />
+            <Button
+                android:id="@+id/Button.Corrige"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/corrige"
+                
+                android:textSize="1pt" />
 
-        <Button
-            android:id="@+id/button.OK"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginBottom="24dp"
-            android:background="@drawable/validar"
-            android:padding="1dp"
-            android:textSize="5pt" />
+            <Button
+                android:id="@+id/button.OK"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:layout_marginBottom="24dp"
+                android:layout_weight="1"
+                android:background="@drawable/validar"
+                
+                android:textSize="5pt" />
+        </LinearLayout>
+
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Esapco.Configuracao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Lado.Esquerdo"
+        android:layout_alignParentBottom="true" >
+
+        <Button
+            android:id="@+id/Button.configuracao"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/configuracao" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_weight="1"
+        android:clickable="false"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="none"
+        android:padding="1dp"
+        android:textAlignment="center"
+        android:textColor="#ffae00"
+        android:textSize="20sp" />
 
 </RelativeLayout>
