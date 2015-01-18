@@ -18,12 +18,12 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity implements OnClickListener {
 
-	private Button buttonElemento, buttonOk, buttonCorrige, buttonConfiguracao, buttonPontuacao;
+	private Button buttonElemento, buttonOk, buttonCorrige, buttonConfiguracao, buttonPontuacao, buttonAudioElemento;
 	private EditText editTextPalavra;
 	Button buttonsLetras[] = new Button[23];
 	private GerElemento gerenteElementos;
 	private Elemento elemento;
-	private MediaPlayer musica,audioAcerto, audioErro;
+	private MediaPlayer musica,audioAcerto, audioErro, audioElemento;
 	private int contador = 0;
 	private final int FASES[] = {0,10,20};
 	private int IMAGEMFASE[] = {R.drawable.fase_i, R.drawable.fase_ii, R.drawable.fase_iii};
@@ -40,6 +40,7 @@ public class MainActivity extends Activity implements OnClickListener {
         
       	// elemento
         buttonElemento = (Button) findViewById(R.id.button_Elemento);
+        
       						
         // botão
         buttonOk = (Button) findViewById(R.id.button_OK);
@@ -49,10 +50,11 @@ public class MainActivity extends Activity implements OnClickListener {
         audioAcerto = MediaPlayer.create(this, R.raw.audio_acerto);
         audioErro = MediaPlayer.create(this, R.raw.erro);
         
-        
+        //botões
         buttonCorrige = (Button) findViewById(R.id.Button_Corrige);
         buttonConfiguracao = (Button) findViewById(R.id.Button_configuracao);
         buttonPontuacao = (Button) findViewById(R.id.button_pontuacao);
+        buttonAudioElemento = (Button) findViewById(R.id.button_audioElemento);
                               
         findViewLetras(); // método que localiza as letras no xml
         
@@ -61,6 +63,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		buttonOk.setOnClickListener(this); 						
 		buttonCorrige.setOnClickListener(this);
 		buttonConfiguracao.setOnClickListener(this);
+		buttonAudioElemento.setOnClickListener(this);
 				
 		// listeners letras
         buttonsLetras[0].setOnClickListener(this); 		buttonsLetras[1].setOnClickListener(this);
@@ -103,7 +106,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	public void onClick(View arg0) {
 		
 		// caso o usuário toque nos demais buttons presentes na tela
-		if((arg0.getId() == R.id.button_Elemento) || (arg0.getId() == R.id.button_OK) || (arg0.getId() == R.id.musica)  || (arg0.getId() == R.id.Button_Corrige) || (arg0.getId() == R.id.Button_configuracao)) {
+		if((arg0.getId() == R.id.button_Elemento) || (arg0.getId() == R.id.button_OK) || (arg0.getId() == R.id.musica)  || (arg0.getId() == R.id.Button_Corrige) || (arg0.getId() == R.id.Button_configuracao) || (arg0.getId() == R.id.button_audioElemento)) {
 			// não faça nada
 		}
 		else{
@@ -123,6 +126,10 @@ public class MainActivity extends Activity implements OnClickListener {
 			case R.id.Button_configuracao: // retornar para omenu de opções
 				ExibeDialogConfiguraçao();
 				break;
+				
+			case R.id.button_audioElemento: // retornar para omenu de opções
+				tocaAudioelemento();
+				break;
 					 
 		}		
 	}
@@ -132,24 +139,24 @@ public class MainActivity extends Activity implements OnClickListener {
 			gerenteElementos = new GerElemento();
 			
 			// primeira fase
-			gerenteElementos.adicionaElemento("gato",  R.drawable.gato); 
-			gerenteElementos.adicionaElemento("bala",  R.drawable.bala);
-			gerenteElementos.adicionaElemento("casa",  R.drawable.casa);
-			gerenteElementos.adicionaElemento("copo",  R.drawable.copo);
-			gerenteElementos.adicionaElemento("dado",  R.drawable.dado);
-			gerenteElementos.adicionaElemento("fogo",  R.drawable.fogo);
-			gerenteElementos.adicionaElemento("gelo",  R.drawable.gelo);
-			gerenteElementos.adicionaElemento("pato",  R.drawable.pato);
-			gerenteElementos.adicionaElemento("rato",  R.drawable.rato);
-			gerenteElementos.adicionaElemento("urso",  R.drawable.urso);
+			gerenteElementos.adicionaElemento("gato",  R.drawable.gato, R.raw.gato); 
+			gerenteElementos.adicionaElemento("bala",  R.drawable.bala, R.raw.bala);
+			gerenteElementos.adicionaElemento("casa",  R.drawable.casa, R.raw.casa);
+			gerenteElementos.adicionaElemento("copo",  R.drawable.copo, R.raw.copo);
+			gerenteElementos.adicionaElemento("dado",  R.drawable.dado, R.raw.dado);
+			gerenteElementos.adicionaElemento("fogo",  R.drawable.fogo, R.raw.fogo);
+			gerenteElementos.adicionaElemento("gelo",  R.drawable.gelo, R.raw.gelo);
+			gerenteElementos.adicionaElemento("pato",  R.drawable.pato, R.raw.pato);
+			gerenteElementos.adicionaElemento("rato",  R.drawable.rato, R.raw.rato);
+			gerenteElementos.adicionaElemento("urso",  R.drawable.urso, R.raw.urso);
 				
 			// segunda fase
 			
-			gerenteElementos.adicionaElemento("boneca",  R.drawable.boneca); 
-			gerenteElementos.adicionaElemento("caneta",  R.drawable.caneta);
-			gerenteElementos.adicionaElemento("coruja",  R.drawable.coruja);
-			gerenteElementos.adicionaElemento("espada",  R.drawable.espada);
-			gerenteElementos.adicionaElemento("sapato",  R.drawable.sapato);
+			gerenteElementos.adicionaElemento("boneca",  R.drawable.boneca, R.raw.boneca); 
+			gerenteElementos.adicionaElemento("caneta",  R.drawable.caneta, R.raw.caneta);
+			gerenteElementos.adicionaElemento("coruja",  R.drawable.coruja, R.raw.coruja);
+			gerenteElementos.adicionaElemento("espada",  R.drawable.espada, R.raw.espada);
+			gerenteElementos.adicionaElemento("sapato",  R.drawable.sapato, R.raw.sapato);
 			
 	}
 	
@@ -241,6 +248,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		defineMaximoCaracteres();
 		tocarMusica();
 		ExibeDialogProximaFase();
+		atualizaAudioEmento();
 	}
 	
 	protected void preparaProximaJogada(){
@@ -254,6 +262,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	        carregaImagemLetras();
 	        defineMaximoCaracteres();
 	        ExibeDialogProximaFase();
+	        atualizaAudioEmento();
 		}
 		else{
 			carregaTelaFinal(); // finaliza o jogo
@@ -337,13 +346,16 @@ public class MainActivity extends Activity implements OnClickListener {
 	            public void silenciarMusica(float volumeEsquerdo, float volumeDireito){
 	        		buttonMusica.setTag("silenciado");
 	        		buttonMusica.setBackgroundResource(R.drawable.sem_som);
-	        		musica.setVolume(volumeEsquerdo, volumeDireito);
+	        		//musica.setVolume(volumeEsquerdo, volumeDireito);
+	        		musica.pause();
+	        		
 	        	}
 	        	
 	        	public void aumentarMusica(float volumeEsquerdo, float volumeDireito){
 	        		buttonMusica.setTag("tocando");
 	        		buttonMusica.setBackgroundResource(R.drawable.som);
-	        		musica.setVolume(volumeEsquerdo, volumeDireito);
+	        		//musica.setVolume(volumeEsquerdo, volumeDireito);
+	        		musica.start();
 	        	}
 	            
 		    });
@@ -393,6 +405,23 @@ public class MainActivity extends Activity implements OnClickListener {
 		}			
 	}
 	
+	public void atualizaAudioEmento(){
+		 audioElemento = MediaPlayer.create(this, elemento.getAudioElemento());
+	}
+	
+	public void tocaAudioelemento(){
+		
+		
+		musica.setVolume(0f, 0f);
+		audioElemento.start();
+		try{
+			Thread.sleep(audioElemento.getDuration());
+		}catch(InterruptedException e){
+			e.printStackTrace();
+		}
+		musica.setVolume(1.0f, 1.0f);
+		
+	}
 	protected void findViewLetras(){
 		
 		 // letras        	               

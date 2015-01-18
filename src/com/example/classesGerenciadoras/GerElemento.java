@@ -18,11 +18,12 @@ public class GerElemento {
 		
 	}
 
-	public void adicionaElemento(String nome, int enderecoImagem) {
+	public void adicionaElemento(String nome, int enderecoImagem, int audioEmento) {
 
 		Elemento elemento = new Elemento();
 		elemento.setNome(nome);
 		elemento.setEnderecoImagem(enderecoImagem);
+		elemento.setAudioEmento(audioEmento);
 		
 		elementos.add(elemento);
 
