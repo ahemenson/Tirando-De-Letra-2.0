@@ -28,14 +28,13 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/btn_Confirmar"
             android:orientation="vertical" >
 
             <TextView
                 android:id="@+id/textView.Mensagem1"
-                android:layout_width="140dp"
+                android:layout_width="120dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:background="@drawable/apenas_acertou"
@@ -52,18 +51,17 @@
                 android:text="@string/mensagem2"
                 android:textColor="#FFFFFF"
                 android:textColorHint="#FFFF00"
-                android:textSize="20pt" />
+                android:textSize="15pt" />
 
             <TextView
                 android:id="@+id/textView.Mensagem3"
-                android:layout_width="160dp"
+                android:layout_width="130dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:background="@drawable/tente_novamente"
                 android:textColor="#FFFF00"
                 android:textColorHint="#000000"
                 android:textSize="15pt" />
-
         </LinearLayout>
 
     </RelativeLayout>

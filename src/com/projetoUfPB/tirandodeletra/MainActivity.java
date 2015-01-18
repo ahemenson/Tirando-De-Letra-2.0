@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends Activity implements OnClickListener {
@@ -24,6 +25,8 @@ public class MainActivity extends Activity implements OnClickListener {
 	private Elemento elemento;
 	private MediaPlayer musica,audioAcerto, audioErro;
 	private int contador = 0;
+	private final int FASES[] = {0,10,20};
+	private int IMAGEMFASE[] = {R.drawable.fase_i, R.drawable.fase_ii, R.drawable.fase_iii};
 	
 
 	@Override
@@ -41,8 +44,7 @@ public class MainActivity extends Activity implements OnClickListener {
         // botão
         buttonOk = (Button) findViewById(R.id.button_OK);
                     
-        //musica
-           
+        //musica           
         musica = MediaPlayer.create(this, R.raw.music_game);
         audioAcerto = MediaPlayer.create(this, R.raw.audio_acerto);
         audioErro = MediaPlayer.create(this, R.raw.erro);
@@ -56,8 +58,7 @@ public class MainActivity extends Activity implements OnClickListener {
         
         //------------[listenes]-------------------            
 		
-		buttonOk.setOnClickListener(this); // 
-						
+		buttonOk.setOnClickListener(this); 						
 		buttonCorrige.setOnClickListener(this);
 		buttonConfiguracao.setOnClickListener(this);
 				
@@ -133,16 +134,23 @@ public class MainActivity extends Activity implements OnClickListener {
 			// primeira fase
 			gerenteElementos.adicionaElemento("gato",  R.drawable.gato); 
 			gerenteElementos.adicionaElemento("bala",  R.drawable.bala);
-//			gerenteElementos.adicionaElemento("casa",  R.drawable.casa);
-//			gerenteElementos.adicionaElemento("copo",  R.drawable.copo);
-//			gerenteElementos.adicionaElemento("dado",  R.drawable.dado);
-//			gerenteElementos.adicionaElemento("fogo",  R.drawable.fogo);
-//			gerenteElementos.adicionaElemento("gelo",  R.drawable.gelo);
-//			gerenteElementos.adicionaElemento("pato",  R.drawable.pato);
-//			gerenteElementos.adicionaElemento("rato",  R.drawable.rato);
-//			gerenteElementos.adicionaElemento("urso",  R.drawable.urso);
+			gerenteElementos.adicionaElemento("casa",  R.drawable.casa);
+			gerenteElementos.adicionaElemento("copo",  R.drawable.copo);
+			gerenteElementos.adicionaElemento("dado",  R.drawable.dado);
+			gerenteElementos.adicionaElemento("fogo",  R.drawable.fogo);
+			gerenteElementos.adicionaElemento("gelo",  R.drawable.gelo);
+			gerenteElementos.adicionaElemento("pato",  R.drawable.pato);
+			gerenteElementos.adicionaElemento("rato",  R.drawable.rato);
+			gerenteElementos.adicionaElemento("urso",  R.drawable.urso);
 				
 			// segunda fase
+			
+			gerenteElementos.adicionaElemento("boneca",  R.drawable.boneca); 
+			gerenteElementos.adicionaElemento("caneta",  R.drawable.caneta);
+			gerenteElementos.adicionaElemento("coruja",  R.drawable.coruja);
+			gerenteElementos.adicionaElemento("espada",  R.drawable.espada);
+			gerenteElementos.adicionaElemento("sapato",  R.drawable.sapato);
+			
 	}
 	
 	public void capturaElementoAtual(){				
@@ -180,7 +188,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		editTextPalavra.setFilters(fArray);
 	}
 	
-	public void verificarResposta() {		
+	public void verificarResposta() {		// Abre o AtertDialog (Dica)
 		
 		if (editTextPalavra.getText().toString().equals(buttonElemento.getTag())) {
 			audioAcerto.start();
@@ -206,35 +214,11 @@ public class MainActivity extends Activity implements OnClickListener {
 			editTextPalavra.setText("");			
 			ExibeDialogValidar(dicaPalavraCerta);
 		}
-		proximaFase();
+		
 		
 	}
 	
-	//emite uma janela de dialogo, avisando o termino da fase
-	public void proximaFase(){
-		if(contador==1){
-			 final Dialog dialog = new Dialog(this);
-			 
-		        dialog.setContentView(R.layout.fase);
-		 
-		        //define o título do Dialog
-		        dialog.setTitle("Terminou");
-		 
-		        //instancia os objetos que estão no layout customdialog.xml
-		        final Button confirmar = (Button) dialog.findViewById(R.id.btn_Confirmar);
-		        		                	 
-		        confirmar.setOnClickListener(new View.OnClickListener() {
-		            public void onClick(View v) {
-		                               
-		             //finaliza o dialog
-		             dialog.dismiss();
-		            }
-		        });
-		 	        	        	         
-		        //exibe na tela o dialog
-		     dialog.show();
-		}
-	}
+	
 	    	
 	public void configuraLetrasInvisiveis(){
 		for (int i = 0; i < buttonsLetras.length; i++) {
@@ -256,6 +240,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		carregaImagemLetras();
 		defineMaximoCaracteres();
 		tocarMusica();
+		ExibeDialogProximaFase();
 	}
 	
 	protected void preparaProximaJogada(){
@@ -264,10 +249,11 @@ public class MainActivity extends Activity implements OnClickListener {
 		capturaElementoAtual();	
 		        
         if(verificaElemento() != null){
-			
+        	
 	        carregaImagemElemento();
 	        carregaImagemLetras();
 	        defineMaximoCaracteres();
+	        ExibeDialogProximaFase();
 		}
 		else{
 			carregaTelaFinal(); // finaliza o jogo
@@ -281,14 +267,14 @@ public class MainActivity extends Activity implements OnClickListener {
 		finish();
 	}
 	
-	 private void ExibeDialogValidar(String dicaPalavraCerta){
-		 // Responsável por emitir uma alertDialog personalizado 
+	 private void ExibeDialogValidar(String dicaPalavraCerta){ 		 // Responsável por emitir uma alertDialog personalizado 
+		 
 	        final Dialog dialog = new Dialog(this);
 	 
 	        dialog.setContentView(R.layout.customdialog_validar);
 	 
 	        //define o título do Dialog
-	        dialog.setTitle("AVISO");
+	       // dialog.setTitle("AVISO");
 	 
 	        //instancia os objetos que estão no layout customdialog.xml
 	        final Button confirmar = (Button) dialog.findViewById(R.id.btn_Confirmar);
@@ -316,7 +302,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	        dialog.setContentView(R.layout.customdialog_configuracao);
 	 
 	        //define o título do Dialog
-	        dialog.setTitle("CONFIGURAÇÃO");
+	       // dialog.setTitle("CONFIGURAÇÃO");
 	 
 	        //instancia os objetos que estão no layout customdialog.xml
 	        
@@ -372,6 +358,39 @@ public class MainActivity extends Activity implements OnClickListener {
 	        //exibe na tela o dialog
 	     dialog.show();
 	          
+	}
+	 
+
+	public void ExibeDialogProximaFase(){ //emite uma janela de dialogo, avisando o termino da fase
+		
+		for(int i = 0;i<FASES.length;i++){
+			if(contador==FASES[i]){
+				 final Dialog dialog = new Dialog(this);
+				 
+			        dialog.setContentView(R.layout.fase);
+			 
+			        //define o título do Dialog
+			        
+			        //dialog.setTitle(""); desabilitando
+			        
+			        Button button_fase = (Button) dialog.findViewById(R.id.button_Fase);
+			        
+			        button_fase.setBackgroundResource(IMAGEMFASE[i]);
+			 
+			        //instancia os objetos que estão no layout customdialog.xml
+			        final Button confirmar = (Button) dialog.findViewById(R.id.btn_Confirmar);
+			        		                	 
+			        confirmar.setOnClickListener(new View.OnClickListener() {
+			            public void onClick(View v) {
+			                               
+			             //finaliza o dialog
+			             dialog.dismiss();
+			            }
+			        });			 	        	        	         
+			        //exibe na tela o dialog
+			     dialog.show();
+			}
+		}			
 	}
 	
 	protected void findViewLetras(){
