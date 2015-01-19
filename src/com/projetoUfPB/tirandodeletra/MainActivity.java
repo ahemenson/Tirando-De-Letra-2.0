@@ -346,7 +346,6 @@ public class MainActivity extends Activity implements OnClickListener {
 	            public void silenciarMusica(float volumeEsquerdo, float volumeDireito){
 	        		buttonMusica.setTag("silenciado");
 	        		buttonMusica.setBackgroundResource(R.drawable.sem_som);
-	        		//musica.setVolume(volumeEsquerdo, volumeDireito);
 	        		musica.pause();
 	        		
 	        	}
@@ -354,7 +353,6 @@ public class MainActivity extends Activity implements OnClickListener {
 	        	public void aumentarMusica(float volumeEsquerdo, float volumeDireito){
 	        		buttonMusica.setTag("tocando");
 	        		buttonMusica.setBackgroundResource(R.drawable.som);
-	        		//musica.setVolume(volumeEsquerdo, volumeDireito);
 	        		musica.start();
 	        	}
 	            

@@ -307,7 +307,6 @@
         android:id="@+id/Lado.Direito"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/Botoes.Inferiores"
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/Lado.Esquerdo"
         android:layout_toRightOf="@+id/Lado.Esquerdo" >
@@ -361,72 +360,70 @@
 
     </RelativeLayout>
 
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/Esapco.Configuracao"
+        android:layout_alignParentRight="true"
+        android:clickable="false"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="none"
+        android:padding="1dp"
+        android:layout_margin="1dp"
+        android:textAlignment="center"
+        android:textColor="#ffae00"
+        android:textSize="25sp" />
+
     <LinearLayout
-        android:id="@+id/Botoes.Inferiores"
+        android:id="@+id/Esapco.Configuracao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="1dp"
+        android:orientation="vertical"
+        android:padding="1dp" >
+
+        <Button
+            android:id="@+id/Button.configuracao"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_margin="1dp"
+            android:background="@drawable/configuracao"
+            android:padding="1dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Espaco.Botoes.Inferiores"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:orientation="horizontal" >
 
-        <LinearLayout
-            android:id="@+id/Espace.Botoes.Validar"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
-
-            <Button
-                android:id="@+id/Button.Corrige"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/corrige"
-                
-                android:textSize="1pt" />
-
-            <Button
-                android:id="@+id/button.OK"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="5dp"
-                android:layout_marginBottom="24dp"
-                android:layout_weight="1"
-                android:background="@drawable/validar"
-                
-                android:textSize="5pt" />
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/Esapco.Configuracao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/Lado.Esquerdo"
-        android:layout_alignParentBottom="true" >
-
         <Button
-            android:id="@+id/Button.configuracao"
+            android:id="@+id/Button.Corrige"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@drawable/configuracao" />
-    </LinearLayout>
+            android:layout_margin="1dp"
+            android:layout_marginLeft="62dp"
+            android:background="@drawable/corrige" />
 
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_weight="1"
-        android:clickable="false"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="none"
-        android:padding="1dp"
-        android:textAlignment="center"
-        android:textColor="#ffae00"
-        android:textSize="20sp" />
+        <Button
+            android:id="@+id/button.Espaco1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/button.OK"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/validar"
+            android:padding="1dp" />
+    </LinearLayout>
 
 </RelativeLayout>
