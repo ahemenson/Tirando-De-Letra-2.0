@@ -64,6 +64,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		buttonCorrige.setOnClickListener(this);
 		buttonConfiguracao.setOnClickListener(this);
 		buttonAudioElemento.setOnClickListener(this);
+		buttonElemento.setOnClickListener(this);
 				
 		// listeners letras
         buttonsLetras[0].setOnClickListener(this); 		buttonsLetras[1].setOnClickListener(this);
@@ -346,6 +347,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	            public void silenciarMusica(float volumeEsquerdo, float volumeDireito){
 	        		buttonMusica.setTag("silenciado");
 	        		buttonMusica.setBackgroundResource(R.drawable.sem_som);
+	        		//musica.setVolume(volumeEsquerdo, volumeDireito);
 	        		musica.pause();
 	        		
 	        	}
@@ -353,6 +355,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	        	public void aumentarMusica(float volumeEsquerdo, float volumeDireito){
 	        		buttonMusica.setTag("tocando");
 	        		buttonMusica.setBackgroundResource(R.drawable.som);
+	        		//musica.setVolume(volumeEsquerdo, volumeDireito);
 	        		musica.start();
 	        	}
 	            
@@ -409,7 +412,6 @@ public class MainActivity extends Activity implements OnClickListener {
 	
 	public void tocaAudioelemento(){
 		
-		
 		musica.setVolume(0f, 0f);
 		audioElemento.start();
 		try{
@@ -422,7 +424,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	}
 	protected void findViewLetras(){
 		
-		 // letras        	               
+		 // botões de letras        	               
         buttonsLetras[0] = (Button) findViewById(R.id.button_A);   buttonsLetras[1] = (Button) findViewById(R.id.button_B);
         buttonsLetras[2] = (Button) findViewById(R.id.button_C);   buttonsLetras[3] = (Button) findViewById(R.id.Button_D);
         buttonsLetras[4] = (Button) findViewById(R.id.Button_E);   buttonsLetras[5] = (Button) findViewById(R.id.Button_F);
